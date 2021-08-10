@@ -16,14 +16,17 @@ class index extends Component {
       <div>
         <List>
           <List.Item>
-            {/* FIXME: 这个地址，不能加后缀js，哟啊不然直接跳转到动态路由去了*/}
-            <Link to="./component-old">component-old - {this.state.test}</Link>
+            <Link to="./class/component-old">component-old - {this.state.test}</Link>
           </List.Item>
           <List.Item>
-            <Link to="./component-new">component-new</Link>
+            <Link to="./class/component-new">component-new</Link>
           </List.Item>
           <List.Item>
-            <Link to="./lists">lists</Link>
+            {/* NOTE: 这不是个相对路径，是个网址缀，所以要加class，不能加js */}
+            <Link to="./class/lists">lists</Link>
+          </List.Item>
+          <List.Item>
+            <Link to="./class/dva/">dva</Link>
           </List.Item>
         </List>
       </div>

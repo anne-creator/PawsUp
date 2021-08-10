@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Item1 extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
   static defaultProps = {
-    name: 'Item1',
+    // NOTE： 有传值用传值，没有就用defaultProps的
+    name: 'list-Item1',
   };
   static propTypes = {
     name: PropTypes.string,
   };
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    return <h1>item1 -- {this.props.name}</h1>;
+    return <h1 onClick={this.handleClick}>conitem1 -- {this.props.name}</h1>;
+  }
+  handleClick() {
+    this.props.handleChild('dataSent');
   }
 }

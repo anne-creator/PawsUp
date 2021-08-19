@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --main-color: rgb(249, 129, 151);
+  --second-color:rgb(56, 75, 115);
+}

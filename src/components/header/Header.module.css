@@ -60,12 +60,12 @@
   display:flex !important;
 
 }
-.antd-upload .title {
+.title {
   line-height: 64px !important;
   display: inline;
   color: var(--second-color) !important;
   margin-left:10px;
-  font-weight:800;
+  font-weight:800 !important;
   margin-bottom:0 !important;
 
 }

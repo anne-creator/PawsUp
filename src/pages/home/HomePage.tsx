@@ -6,16 +6,7 @@ import sideImage from '../../assets/images/sider_2019_12-09.png';
 import sideImage2 from '../../assets/images/sider_2019_02-04.png';
 import sideImage3 from './../../assets/images/sider_2019_02-04-2.png';
 import styles from './HomePage.module.css'
-export interface HomePageProps {
-
-}
-
-export interface HomePageState {
-
-}
-
-class HomePage extends React.Component<HomePageProps, HomePageState> {
-    state = { : }
+export class HomePage extends React.Component {
     render() {
         return (
             <div className={styles.App}>
@@ -56,4 +47,3 @@ class HomePage extends React.Component<HomePageProps, HomePageState> {
     }
 }
 
-export default HomePage;

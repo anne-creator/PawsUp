@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Typography } from 'antd';
-
+import { useHistory } from 'react-router-dom'
 interface PropsType {
     id: string | number;
     size: 'large' | 'small';
@@ -9,8 +9,9 @@ interface PropsType {
     title: string;
 }
 export const ProductImage: React.FC<PropsType> = ({ id, size, imageSrc, price, title }) => {
+    const history = useHistory()
     return (
-        <div>
+        <div onClick={() => history.push(`detail/${id}`)}>
             {/* 判断size */}
             {size === 'large' ? (
                 <Image src={imageSrc} height={285} width={490} />

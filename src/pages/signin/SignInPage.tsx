@@ -10,7 +10,7 @@ export class SignInPage extends React.Component<SignInPageProps> {
         console.log(props);
     }
     render() {
-        return (<h1>signPage</h1>);
+        return (<h1>sign in Page</h1>);
     }
 }
 

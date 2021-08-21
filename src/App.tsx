@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./App.module.css";
 import { BrowserRouter, Route } from "react-router-dom";
-import { HomePage, SignInPage, RegisterPage } from './pages';
+import { HomePage, SignInPage, RegisterPage, DetailPage } from './pages';
 
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
         <Route exact path='/' component={HomePage} />
         {/* NOTE：路由发生了变化，两个页面会堆叠显示。所以需要短路处理，给path之前加入 exact  */}
         <Route exact path='/signin' component={SignInPage} />
-        <Route exact component={RegisterPage} />
-
+        <Route exact path='/register' component={RegisterPage} />
+        <Route exact path='/detail/:touristRoutedId' component={DetailPage} />
       </BrowserRouter>
     </div>
   );

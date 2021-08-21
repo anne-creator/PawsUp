@@ -2,31 +2,35 @@ import React from 'react';
 import styles from './Header.module.css'
 import logo from '../../assets/logo.svg';
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
+import { useHistory } from 'react-router-dom'
 
 export const Header: React.FC = () => {
-    return (
-        <div className={styles["app-header"]}>
-        {/* top-header */}
-        <Layout.Header className={styles["main-header"]}>
-          <div className={styles["left-header"]}>
+  const history = useHistory()
+  return (
+    <div className={styles["app-header"]}>
+      {/* top-header */}
+      <Layout.Header className={styles["main-header"]}>
+        <div className={styles["left-header"]}>
+          <span onClick={() => history.push('/')}>
             <img src={logo} alt="logo" className={styles["App-logo"]} />
             <Typography.Title level={3} className={styles.title}>
               Paws Up
             </Typography.Title>
-            <Input.Search
-              placeholder={"请输入旅游目的地、主题、或关键字"}
-              className={styles["search-input"]}
-            />
-          </div>
-          <div className={styles['right-header']}>
-            {/* <Typography.Text>Make lives happier</Typography.Text> */}
-            <Button.Group className={styles["button-group"]}>
-              <Button className={styles["button-register"]}>Register</Button>
-              <Button className={styles["button-login"]} >Login</Button>
-            </Button.Group>
-          </div>
-        </Layout.Header>
-        {/* <Menu mode={"horizontal"} className={styles["main-menu"]}>
+          </span>
+          <Input.Search
+            placeholder={"请输入旅游目的地、主题、或关键字"}
+            className={styles["search-input"]}
+          />
+        </div>
+        <div className={styles['right-header']}>
+          {/* <Typography.Text>Make lives happier</Typography.Text> */}
+          <Button.Group className={styles["button-group"]}>
+            <Button onClick={() => history.push('register')} className={styles["button-register"]}>Register</Button>
+            <Button onClick={() => history.push('signin')} className={styles["button-login"]} >Login</Button>
+          </Button.Group>
+        </div>
+      </Layout.Header>
+      {/* <Menu mode={"horizontal"} className={styles["main-menu"]}>
           <Menu.Item key={1}>旅游首页</Menu.Item>
           <Menu.Item key={2}>周末游</Menu.Item>
           <Menu.Item key={3}>跟团游</Menu.Item>
@@ -44,6 +48,6 @@ export const Header: React.FC = () => {
           <Menu.Item key="15"> 爱玩户外 </Menu.Item>
           <Menu.Item key="16"> 保险 </Menu.Item>
         </Menu> */}
-      </div>
-    );
+    </div>
+  );
 }

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import styles from './SideMenu.module.css';
+import styles from './SideMenu.module.scss';
 import { sideMenuList } from './mockup';
 import { GifOutlined } from "@ant-design/icons";
 import { Menu } from 'antd';

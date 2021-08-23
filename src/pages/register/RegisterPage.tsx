@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Register.module.css'
+import styles from './Register.module.scss'
 
 export class RegisterPage extends React.Component {
     // constructor(props) {

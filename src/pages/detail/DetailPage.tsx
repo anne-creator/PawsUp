@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from 'Deatil.module.css'
+import styles from 'Deatil.module.scss'
 import { RouteComponentProps } from 'react-router-dom';
 interface MatchParams {
     touristRoutedId: string

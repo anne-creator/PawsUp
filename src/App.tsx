@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./App.module.css";
+import styles from "./App.module.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 import { HomePage, SignInPage, RegisterPage, DetailPage } from './pages';
 

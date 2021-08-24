@@ -1,0 +1,11 @@
+@import '../../index.scss';
+.main-button {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 1.6rem;
+    background-color:$color-primary-pink;
+    border-radius:9rem;
+    @include text-style-button-2;
+    cursor:pointer;
+}

@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,700&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
 }
 
 code {
@@ -15,85 +16,87 @@ code {
 }
 
 :root {
-  	$color-primary-pink-color: rgba(249,129,151,1);
-	$color-primary-blue-color: rgba(56,75,115,1);
-	$color-primary-2: rgba(151,87,215,1);
-	$color-primary-3: rgba(239,70,111,1);
-	$color-primary-4: rgba(69,178,107,1);
-	$color-secondary-1: rgba(75,201,240,1);
-	$color-secondary-2: rgba(228,215,207,1);
-	$color-secondary-3: rgba(255,209,102,1);
-	$color-secondary-4: rgba(205,180,219,1);
-	$color-neutrals-1: rgba(20,20,22,1);
-	$color-neutrals-2: rgba(35,38,47,1);
-	$color-neutrals-3: rgba(53,57,69,1);
-	$color-neutrals-4: rgba(119,126,144,1);
-	$color-neutrals-5: rgba(177,181,195,1);
-	$color-neutrals-6: rgba(230,232,236,1);
-	$color-neutrals-7: rgba(244,245,246,1);
-	$color-neutrals-8: rgba(252,252,253,1);
+	font-size:62.5%;
+  	
 }
+$color-primary-pink: rgba(249,129,151,1);
+$color-primary-blue: rgba(56,75,115,1);
+$color-primary-2: rgba(151,87,215,1);
+$color-primary-3: rgba(239,70,111,1);
+$color-primary-4: rgba(69,178,107,1);
+$color-secondary-1: rgba(75,201,240,1);
+$color-secondary-2: rgba(228,215,207,1);
+$color-secondary-3: rgba(255,209,102,1);
+$color-secondary-4: rgba(205,180,219,1);
+$color-neutrals-1: rgba(20,20,22,1);
+$color-neutrals-2: rgba(35,38,47,1);
+$color-neutrals-3: rgba(53,57,69,1);
+$color-neutrals-4: rgba(119,126,144,1);
+$color-neutrals-5: rgba(177,181,195,1);
+$color-neutrals-6: rgba(230,232,236,1);
+$color-neutrals-7: rgba(244,245,246,1);
+$color-neutrals-8: rgba(252,252,253,1);
 
 @mixin text-style-hero {
-	font-size:96px;
+	font-size:9.6rem;
 	font-family:"DM Sans";
 	font-weight:bolder;
 	font-style:normal;
 	line-height:96px;
 }
 @mixin text-style-headline-1 {
-	font-size:64px;
+	font-size:6.4rem;
 	font-family:"DM Sans";
 	font-weight:bolder;
 	font-style:normal;
 	line-height:64px;
 }
 @mixin text-style-headline-2 {
-	font-size:48px;
+	font-size:4.8rem;
 	font-family:"DM Sans";
 	font-weight:bolder;
 	font-style:normal;
-	line-height:56px;
+	line-height:5.6rem;
 }
 @mixin text-style-headline-3 {
-	font-size:40px;
+	font-size:4rem;
 	font-family:"DM Sans";
 	font-weight:bolder;
 	font-style:normal;
-	line-height:48px;
+	line-height:4.8rem;
 }
 @mixin text-style-headline-4 {
-	font-size:32px;
+	font-size:3.2rem;
 	font-family:"DM Sans";
 	font-weight:bolder;
 	font-style:normal;
-	line-height:40px;
+	line-height:4rem;
 }
 @mixin text-style-body-1 {
-	font-size:24px;
+	font-size:2.4rem;
 	font-family:"Poppins";
 	font-weight:normal;
 	font-style:normal;
 	line-height:32px;
 }
 @mixin text-style-body-1-bold {
-	font-size:24px;
+	font-size:2.4rem;
 	font-family:"Poppins";
-	line-height:32px;
+	line-height:3.2rem;
 }
 @mixin text-style-body-2 {
-	font-size:16px;
+	font-size:1.6rem;
 	font-family:"Poppins";
 	font-weight:normal;
 	font-style:normal;
-	line-height:24px;
+	line-height:2.4rem;
 }
 @mixin text-style-body-2-bold {
-	font-size:16px;
+	font-size:1.6rem;
 	font-family:"Poppins";
 	font-weight:bold;
 	font-style:normal;
-	line-height:24px;
+	line-height:2.4rem;
 }
 @mixin text-style-caption {
 	font-size:14px;
@@ -103,23 +106,23 @@ code {
 	line-height:24px;
 }
 @mixin text-style-caption-bold {
-	font-size:14px;
+	font-size:1.4;
 	font-family:"Poppins";
 	font-weight:bold;
 	font-style:normal;
-	line-height:24px;
+	line-height:2.4rem;
 }
 @mixin text-style-caption-2 {
-	font-size:12px;
+	font-size:1.2rem;
 	font-family:"Poppins";
 	font-weight:normal;
 	font-style:normal;
-	line-height:20px;
+	line-height:2.0rem;
 }
 @mixin text-style-caption-2-bold {
-	font-size:12px;
+	font-size:1.2rem;
 	font-family:"Poppins";
-	line-height:20px;
+	line-height:2rem;
 }
 @mixin text-style-hairline-1 {
 	font-size:16px;
@@ -129,25 +132,25 @@ code {
 	line-height:16px;
 }
 @mixin text-style-hairline-2 {
-	font-size:12px;
+	font-size:1.2rem;
 	font-family:"Poppins";
 	font-weight:bolder;
 	font-style:normal;
-	line-height:12px;
+	line-height: 1.2rem;;
 }
 @mixin text-style-button-1 {
-	font-size:16px;
+	font-size:1.6rem;
 	font-family:"DM Sans";
 	font-weight:bolder;
 	font-style:normal;
-	line-height:16px;
+	line-height:1.6rem;
 }
 @mixin text-style-button-2 {
-	font-size:14px;
+	font-size:1.4rem;
 	font-family:"DM Sans";
 	font-weight:bolder;
 	font-style:normal;
-	line-height:16px;
+	line-height:1.6rem;
 }
 @mixin effect-style-depth-1 {
 	box-shadow: 0.00px 8.00px 16.00px -8.00px rgba(15,15,15,0.200);
@@ -163,4 +166,14 @@ code {
 }
 @mixin effect-style-depth-5 {
 	box-shadow: 0.00px 16.00px 64.00px -48.00px rgba(31,47,70,0.400);
+}
+
+// button
+@mixin button-basic {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 1.6rem;
+    border-radius:9rem;
+    cursor:pointer;
 }

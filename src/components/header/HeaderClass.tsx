@@ -2,10 +2,12 @@ import React from 'react';
 import styles from './Header.module.scss'
 import logo from '../../assets/logo.svg';
 import { GlobalOutlined } from "@ant-design/icons";
-import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
+import { Menu, Dropdown } from "antd";
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import store from '../../redux/store'
 import { LanuageState } from '../../redux/languageReducer'
+// import { MainButton, SecondaryButton } from '../../components';
+
 
 interface state extends LanuageState { }
 
@@ -20,43 +22,25 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
   }
 
   render() {
-    const { history } = this.props
+    const { history } = this.props;
     return (
       <div className={styles["app-header"]}>
         {/* top-header */}
-        <Layout.Header className={styles["main-header"]}>
-          <div className={styles["left-header"]}>
-            <span onClick={() => history.push('/')}>
-              <img src={logo} alt="logo" className={styles["App-logo"]} />
-              <Typography.Title level={3} className={styles.title}>
-                Paws Up
-              </Typography.Title>
+        <div className={styles.header} >
+          <div className={styles["header__left"]}>
+            <span onClick={() => history.push('/')} className={styles["header__logo"]}>
+              <img src={logo} alt="logo" className={styles["header__logo__img"]} />
+              <h1 className={styles["header__logo__title"]}>Paws Up</h1>
             </span>
-            <Input.Search
-              placeholder={"请输入旅游目的地、主题、或关键字"}
-              className={styles["search-input"]}
-            />
+            <h4 className={styles["header__how"]}>How it works</h4>
           </div>
-          <div className={styles['right-header']}>
-            <Dropdown.Button
-              style={{ marginRight: 15 }}
-              overlay={
-                <Menu>
-                  {this.state.languageList.map(r => <Menu.Item key={r.code}>{r.name}</Menu.Item>
-                  )}
-                </Menu>
-              }
-              icon={<GlobalOutlined />}
-            >
-              {this.state.language === "zh" ? "中文" : 'English'}
-            </Dropdown.Button>
-            {/* <Typography.Text>Make lives happier</Typography.Text> */}
-            <Button.Group className={styles["button-group"]}>
-              <Button onClick={() => history.push('register')} className={styles["button-register"]}>Register</Button>
-              <Button onClick={() => history.push('signin')} className={styles["button-login"]} >Login</Button>
-            </Button.Group>
+          <div className={styles['header__right']}>
+            {/* <MainButton link='register' content='Log In' />
+            <SecondaryButton link='signin' content="Sign Up" /> */}
+            <div className={styles['button__log-in']}>Log In</div>
+            <div className={styles['button__sign-up']}>Sign Up</div>
           </div>
-        </Layout.Header>
+        </div >
         {/* <Menu mode={"horizontal"} className={styles["main-menu"]}>
           <Menu.Item key={1}>旅游首页</Menu.Item>
           <Menu.Item key={2}>周末游</Menu.Item>

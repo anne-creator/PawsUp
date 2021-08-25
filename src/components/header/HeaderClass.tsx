@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './Header.module.scss'
 import logo from '../../assets/logo.svg';
 import { GlobalOutlined } from "@ant-design/icons";
-import { Menu, Dropdown } from "antd";
+import { Menu, Dropdown, Button } from "antd";
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import store from '../../redux/store'
 import { LanuageState } from '../../redux/languageReducer'
+import SubMenu from 'antd/lib/menu/SubMenu';
 // import { MainButton, SecondaryButton } from '../../components';
 
 
@@ -34,11 +35,50 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
             </span>
             <h4 className={styles["header__how"]}>How it works</h4>
           </div>
+          <Menu mode='horizontal' className={styles["header__middle"]}>
+            <SubMenu key="Adopt" title="Adopt" className={styles['item']}>
+              <Menu.Item key="Cat" className={styles['nav']}>
+                Cat
+              </Menu.Item>
+              <Menu.Item key="Dog" className={styles['item']}>
+                Dog
+              </Menu.Item >
+            </SubMenu>
+            <SubMenu key="Donate" title="Donate" className={styles['nav']}>
+              <Menu.Item key="Food" className={styles['item']}>
+                Food
+              </Menu.Item>
+              <Menu.Item key="Toys" className={styles['item']}>
+                Toys
+              </Menu.Item >
+              <Menu.Item key="Supplies" className={styles['item']}>
+                Supplies
+              </Menu.Item >
+            </SubMenu>
+            <SubMenu key="Health-Care" title="Health Care" className={styles['nav']}>
+              <Menu.Item key="Check" className={styles['item']}>
+                Regular Check
+              </Menu.Item>
+              <Menu.Item key="Neurtered" className={styles['item']}>
+                Neurtered/Chips
+              </Menu.Item >
+              <Menu.Item key="Grooming" className={styles['item']}>
+                Grooming
+              </Menu.Item >
+              <Menu.Item key="Medical" className={styles['item']}>
+                Sick Pets Medical
+              </Menu.Item >
+            </SubMenu>
+          </Menu>
           <div className={styles['header__right']}>
+            <Button type='primary' className={styles['button__login']}>Log In</Button>
+            <Button className={styles['button__signup']}>Sign Up</Button>
             {/* <MainButton link='register' content='Log In' />
             <SecondaryButton link='signin' content="Sign Up" /> */}
-            <div className={styles['button__log-in']}>Log In</div>
-            <div className={styles['button__sign-up']}>Sign Up</div>
+            {/* <Button className={styles['antd1']} onClick={() => history.push("register")}>注册</Button>
+            <Button className={styles['antd2']} onClick={() => history.push("signIn")}>登陆</Button> */}
+            {/* <div className={styles['button__log-in']}>Log In</div>
+            <div className={styles['button__sign-up']}>Sign Up</div> */}
           </div>
         </div >
         {/* <Menu mode={"horizontal"} className={styles["main-menu"]}>

@@ -7,43 +7,44 @@ import sideImage2 from '../../assets/images/sider_2019_02-04.png';
 import sideImage3 from './../../assets/images/sider_2019_02-04-2.png';
 import styles from './HomePage.module.scss'
 export class HomePage extends React.Component {
-    render() {
-        return (
-            <div className={styles.App}>
-                <Header />
-                <div className={styles['page-content']}>
-                    <Row style={{ marginTop: 20 }}>
-                        {/* NOTE：多重菜单 */}
-                        {/* <Col span={6} style={{ background: "red" }}><SideMenu /></Col> */}
-                        <Col span={24} style={{ backgroundColor: 'blue' }}><Carousel /></Col>
-                    </Row>
-                    <ProductCollection
-                        title={<Typography.Title level={3} type="warning">Popular</Typography.Title>}
-                        sideImage={sideImage}
-                        products={productList1}
-                    />
-                    <ProductCollection
-                        title={
-                            <Typography.Title level={3} type="danger">
-                                新品上市
-                            </Typography.Title>
-                        }
-                        sideImage={sideImage2}
-                        products={productList2}
-                    />
-                    <ProductCollection
-                        title={
-                            <Typography.Title level={3} type="success">
-                                国内游推荐
-                            </Typography.Title>
-                        }
-                        sideImage={sideImage3}
-                        products={productList3}
-                    />
-                </div>
-                <Footer />
+  render() {
+    return (
+      <div className={styles.App}>
+        <Header />
+        <div className={styles['content']}>
+          <div className={styles['hero']}>
+            <div className={styles['center']}>
+              <h1 className={styles['hero__title']}>More Than one Way to help</h1>
+              <p className={styles['hero__subtitle']}>PawsUp is a non-profit charity website that provides pet adoption, pet donation and pet health care services.</p>
             </div>
-        );
-    }
+          </div>
+          <ProductCollection
+            title={<Typography.Title level={3} type="warning">Popular</Typography.Title>}
+            sideImage={sideImage}
+            products={productList1}
+          />
+          <ProductCollection
+            title={
+              <Typography.Title level={3} type="danger">
+                新品上市
+              </Typography.Title>
+            }
+            sideImage={sideImage2}
+            products={productList2}
+          />
+          <ProductCollection
+            title={
+              <Typography.Title level={3} type="success">
+                国内游推荐
+              </Typography.Title>
+            }
+            sideImage={sideImage3}
+            products={productList3}
+          />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 

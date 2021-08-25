@@ -1,6 +1,33 @@
-.page-content {
+@import '../../index.scss';
+.content {
     width:100%;
     margin: 0 auto;
     min-height:75vh;
+  .hero {
+    position: relative;
+    height: 50rem;
+    background: no-repeat center url(../../assets/images/hero.png);
+    background-size:cover;
+    .center {
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      .hero__title{
+        // width: 60%;
+        color:$color-neutrals-8;
+        @include text-style-hero;
+        @media(max-width: 1200px){@include text-style-headline-1};//1 rem = 9px < 1200px
+	      @media(max-width: 900px){@include text-style-headline-2};///1 rem = 8px < 900px
+	      @media(max-width: 600px){@include text-style-headline-3};//1 rem = 8px < 600px
+      }
+      .hero__subtitle {
+        color:$color-neutrals-8;
+        @include text-style-body-3;
+      }
+    }
   }
+}
+
   

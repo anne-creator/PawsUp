@@ -33,22 +33,22 @@ export class HomePage extends React.Component {
           <div className={styles['ways__cards']}>
             <div className={styles['ways__card']}>
               <img className={styles['ways__card__img']} src={way1} />
-              <h4 className={styles['ways__card__title']}>Take a furry friend home</h4>
+              <div className={styles['ways__card__title']}><h4 className={styles['tittle__text']}>Take a furry friend home</h4></div>
               <Button className={styles['ways__card__button']} type='primary'>Start Now</Button>
             </div>
             <div className={styles['ways__card']}>
               <img className={styles['ways__card__img']} src={way2} />
-              <h4 className={styles['ways__card__title']}>Buy them a gift you selected</h4>
+              <div className={styles['ways__card__title']}><h4 className={styles['tittle__text']}>Buy them a gift you selected</h4></div>
               <Button className={styles['ways__card__button']} type='primary'>Start Now</Button>
             </div>
             <div className={styles['ways__card']}>
               <img className={styles['ways__card__img']} src={way3} />
-              <h4 className={styles['ways__card__title']}>Medical care is in great need </h4>
+              <div className={styles['ways__card__title']}><h4 className={styles['tittle__text']}>Medical care is in great need</h4> </div>
               <Button className={styles['ways__card__button']} type='primary'>Start Now</Button>
             </div>
             <div className={styles['ways__card']}>
               <img className={styles['ways__card__img']} src={way4} />
-              <h4 className={styles['ways__card__title']}>Buy for your own pet can also help </h4>
+              <div className={styles['ways__card__title']}><h4 className={styles['tittle__text']}>Buy for your own pet can also help</h4> </div>
               <Button className={styles['ways__card__button']} type='primary'>Start Now</Button>
             </div>
           </div>
@@ -62,7 +62,7 @@ export class HomePage extends React.Component {
             <div className={`${styles['text']} ${styles.item}`}>
               <div className={styles['text__decor']}>New ways of  helping animals </div>
               <div className={styles['text__heading']}>Like watching cute animal viedos? </div>
-              <div className={styles['text__subheading']}>You donate selected products, We deliver the vidoe.</div>
+              <div className={styles['text__subheading']}> Donate selected products, We will deliver the cute animal video.</div>
               <div className={styles['text__restriction']}></div>
               <Button className={styles['text__button']} >Discover more</Button>
             </div>

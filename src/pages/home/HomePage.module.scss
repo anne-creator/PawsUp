@@ -1,4 +1,5 @@
 @import '../../index.scss';
+// ///////////////  Hero  ///////////////
 .hero {
   position: relative;
   width: 100%;
@@ -34,33 +35,105 @@
     }
   }
 }
+
+// ///////////////  Ways to give  ///////////////
+.ways {
+  width: 100%;
+  padding:8.33vw 11.11vw  ;
+  &__title{
+    @include text-style-headline-3;
+    color:$color-neutrals-3;
+    text-align: center;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(256px,1fr));
+    gap:3rem;
+  }
+  &__card {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:27.1vw;
+    background-size: red;
+    &__img{
+      // background-size:contain;
+    }
+    &__title{
+      margin:1.39vw 0;
+      width: 80%;
+      text-align: center;
+      @include text-style-body-2;
+      font-size: 1.11vw;
+      line-height: 1.667vw;
+      margin:auto;
+    }
+    .ways__card__button{
+      @include button-secondary;
+    }
+
+  }
+}
+
+// ///////////////  Content  ///////////////
 .content {
     width:100%;
     min-height:75vh;
+
+    .item{
+      margin:5vw;
+    }
   &__video{
-    padding: 1rem;
     display: flex;
-    padding:8rem 12rem 8rem 19rem;
+    padding:5vw 8vw;
     align-items: center;
     justify-content: center;
     @media only screen and (max-width:900px) {
       flex-direction: column;
     }
-    
-
+    // left-side-block
     &__img{
-      background-color: red;
+      background: no-repeat center url(../../assets/images/video.jpeg);
+      background-size:contain;
       width: 44.4vw;
-      margin-right: 6rem;
-      height: 58.4rem;
-
-    }
-    &__text {
-      background-color: yellow;
-      width: 28.8vw;
-      height: 34.4rem;
+      height: 40.5vw;
     }
   }
 }
 
-  
+// all text block
+.text {
+  width: 28.8vw;
+  height: 23.8vw;
+
+  &__decor{
+    @include text-style-hairline-1;
+    color: $color-neutrals-4;
+    font-size: max(1.11vw,12px);
+    line-height: max(1.11vw,12px);
+  }
+  &__heading{
+    @include text-style-headline-1;
+    font-size: max(2.77vw,10px);
+    line-height: max(3.33vw,10px);
+    margin-bottom: 2rem;
+  }
+  &__subheading{
+    @include text-style-body-1;
+    font-size:1.67vw;
+    line-height: 2.22vw;
+  }
+  &__restriction{
+    @include text-style-caption;
+    font-size:max(0.97vw,8px);
+    margin-bottom: 4rem;
+  }
+  // NOTE:can't use &__button or the border will not work
+  .text__button {
+    @include button-secondary;
+    // font-size: max(1.11vw,12px);
+    // line-height: max(1.11vw,12px);
+
+  }
+}

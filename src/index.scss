@@ -188,6 +188,19 @@ $color-neutrals-8: rgba(252,252,253,1);
     cursor:pointer;
 }
 
+@mixin button-secondary{
+	@include button-basic;
+	@include text-style-button-2;
+        color: $color-primary-pink;
+        border:2px solid $color-primary-pink;
+        background-color: transparent;
+        &:hover {
+          color:$color-neutrals-8;
+          border:none;
+          background-color: $color-primary-pink;
+        }
+}
+
 .ant-menu-light .ant-menu-item:hover, .ant-menu-light .ant-menu-item-active, .ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-light .ant-menu-submenu-active, .ant-menu-light .ant-menu-submenu-title:hover{
 	color:$color-primary-pink-dark !important;
 }

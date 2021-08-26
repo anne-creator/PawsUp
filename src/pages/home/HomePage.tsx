@@ -25,7 +25,10 @@ export class HomePage extends React.Component {
           <div className={styles['content__video']}>
             <div className={styles['content__video__img']}></div>
             <div className={styles['content__video__text']}>b</div>
-
+          </div>
+          <div className={styles['content__video']}>
+            <div className={styles['content__video__img']}></div>
+            <div className={styles['content__video__text']}>b</div>
           </div>
 
 

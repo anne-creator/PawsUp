@@ -36,7 +36,7 @@
   }
 }
 
-// ///////////////  Ways to give  ///////////////
+// ///////////////  Start: Ways to give  ///////////////
 .ways {
   width: 100%;
   padding:8.33vw 11.11vw  ;
@@ -63,7 +63,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height:max(6.11vw,50px);
+      height:max(6.11vw,90px);
       @include text-style-body-2;
       font-size: max(1.11vw,16px);
       line-height: max(1.667vw,16px);
@@ -71,7 +71,6 @@
       .tittle__text {
         width: 80%;
         text-align: center;
-
       }
     }
     .ways__card__button{
@@ -80,22 +79,26 @@
 
   }
 }
+// ///////////////  End: Ways to give  ///////////////
 
-// ///////////////  Content  ///////////////
+
+// ///////////////  Start: Content  ///////////////
 .content {
     width:100%;
     min-height:75vh;
-
-    .item{
+    .item{ 
       margin:5vw;
     }
+  // 1.video section 
   &__video{
     display: flex;
-    padding:5vw 8vw;
+    padding:0 8vw;
     align-items: center;
     justify-content: center;
+    background-color: $color-secondary-2;
     @media only screen and (max-width:900px) {
       flex-direction: column;
+      padding:0 6vw;
     }
     // left-side-block
     &__img{
@@ -103,15 +106,119 @@
       background-size:contain;
       width: 44.4vw;
       height: 40.5vw;
+      @media only screen and (max-width:900px) {
+        width:80%;
+      }
     }
   }
+
+  // 2.buy section
+  &__buy {
+    width: 100%;
+    display: flex;
+    padding:0 8vw;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-secondary-2;
+    @media only screen and (max-width:900px) {
+      flex-direction: column;
+      padding:0 6vw;
+    }
+    // left-side-block
+    &__img{
+      background: no-repeat center url(../../assets/images/buy.png);
+      background-size:contain;
+      width: 44.4vw;
+      height: 40.5vw;
+      @media only screen and (max-width:900px) {
+        width:80%;
+      }
+    }
+  } 
+  
+  
+  // 3.feed section
+  &__feed {
+    width: 100%;
+    display: flex;
+    padding:0 8vw;
+    align-items: center;
+    justify-content: center;
+    @media only screen and (max-width:900px) {
+      flex-direction: column;
+      padding:0 6vw;
+    }
+    // left-side-block
+    &__img{
+      background: no-repeat center url(../../assets/images/feed.png);
+      background-size:contain;
+      width: 44.4vw;
+      height: 40.5vw;
+      @media only screen and (max-width:900px) {
+        width:80%;
+      }
+    }
+  }
+  // 4.sick section
+  &__sick {
+    width: 100%;
+    display: flex;
+    padding:0 8vw;
+    align-items: center;
+    justify-content: center;
+    @media only screen and (max-width:900px) {
+      flex-direction: column;
+      padding:0 6vw;
+    }
+    // left-side-block
+    &__img{
+      background: no-repeat center url(../../assets/images/sick.png);
+      background-size:contain;
+      width: 44.4vw;
+      height: 40.5vw;
+      @media only screen and (max-width:900px) {
+        width:80%;
+      }
+    }
+  }
+  // 5.senior section
+  &__senior {
+    width: 100%;
+    display: flex;
+    padding:0 8vw;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary-pink;
+    @media only screen and (max-width:900px) {
+      flex-direction: column;
+      padding:0 6vw;
+    }
+    // left-side-block
+    &__img{
+      background: no-repeat center url(../../assets/images/senior.png);
+      background-size:contain;
+      width: 33.3vw;
+      height: 34.2vw;
+      @media only screen and (max-width:900px) {
+        width:80%;
+      }
+    }
+    .text__heading, .text__subheading, {
+      color: $color-neutrals-7;
+    }
+  }
+
 }
 
 // all text block
-.text {
+.text{
   width: 28.8vw;
-  height: 23.8vw;
+  display: flex;
+  flex-direction: column;
 
+  @media only screen and (max-width:900px) {
+    width:70%;
+    align-items: center;  }
   &__decor{
     @include text-style-hairline-1;
     color: $color-neutrals-4;
@@ -121,25 +228,59 @@
   }
   &__heading{
     @include text-style-headline-1;
-    font-size: max(2.77vw,10px);
-    line-height: max(3.33vw,10px);
+    font-size: max(2.77vw,20px);
+    line-height: max(3.33vw,20px);
     margin-bottom: 2rem;
+    color:$color-neutrals-3;
   }
   &__subheading{
     @include text-style-body-1;
-    font-size:1.67vw;
-    line-height: 2.22vw;
+    font-size:max(1.47vw,16px);
+    line-height: max(1.47vw,20px);
+    color:$color-neutrals-3;
+
   }
   &__restriction{
     @include text-style-caption;
-    font-size:max(0.97vw,8px);
+    font-size:max(0.97vw,9px);
     margin-bottom: 4rem;
+    color:$color-neutrals-3;
+
   }
   // NOTE:can't use &__button or the border will not work
   .text__button {
     @include button-secondary;
-    // font-size: max(1.11vw,12px);
-    // line-height: max(1.11vw,12px);
+    font-size: max(1.11vw,12px);
+    line-height: max(1.11vw,12px);
+    width:50%;
+  }
+  .button__primary__donate{
+    @include button-basic;
+    font-size: max(1.11vw,12px);
+    line-height: max(1.11vw,12px);
+    color:$color-neutrals-8;
+    background-color: $color-primary-pink;
+    border:none;
+    margin: 2vw 0;
+    width: max(20vw,49px);
+  }
+  .button__secondary__donate {
+    @include button-secondary;
+    font-size: max(1.11vw,12px);
+    line-height: max(1.11vw,12px);
+    // padding:1.8rem 2.5rem;
+    width: max(20vw,49px);
+  }
+  .button__senior {
+    color:$color-neutrals-8;
+    background-color: $color-primary-blue;
+    border:none;
+    width: max(15vw,110px);
 
   }
+  
 }
+
+
+
+// ///////////////  End: Content  ///////////////

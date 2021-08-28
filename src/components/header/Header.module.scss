@@ -66,6 +66,15 @@
       &:hover {
         background-color: $color-primary-pink-light;
       }
+      &:active,&:focus {
+        border-color: $color-primary-pink;
+        background: $color-primary-pink;
+        box-shadow: $color-primary-pink;
+      }
+      ::selection {
+        color: #fff;
+        background: $color-primary-pink !important;
+    }
     }
     .button__signup {
       @include button-basic;

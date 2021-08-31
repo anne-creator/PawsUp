@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './AdoptPage.module.scss'
 import { Button, Divider, Dropdown, Menu, Card } from 'antd'
 import { DownCircleOutlined } from "@ant-design/icons";
+import { useHistory } from 'react-router-dom'
 
 
 // export interface AdoptPageProps {
@@ -18,6 +19,8 @@ export const AdoptPage: React.FC = () => {
         </Menu>
     )
     const { Meta } = Card;
+    const history = useHistory()
+
 
     return (
         <div className={styles['adopt-container']}>
@@ -68,7 +71,7 @@ export const AdoptPage: React.FC = () => {
                     <Divider />
                 </div>
                 <div className={styles['adopt__cards']}>
-                    <div className={styles['adopt__card']}>
+                    <div className={styles['adopt__card']} onClick={() => history.push('/adopt/pet')}>
                         <div className={styles['adopt__card__img']}></div>
                         <div className={styles['adopt__card__content']}>
                             <div className={styles['adopt__card__title']}>

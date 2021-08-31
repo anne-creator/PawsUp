@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,700&display=swap");
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: #23262f;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+.ant-menu-light .ant-menu-item:hover,
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-light .ant-menu-submenu-active,
+.ant-menu-light .ant-menu-submenu-title:hover {
+  color: #bf5454 !important;
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected::after {
+  border-bottom: 2px solid #bf5454 !important;
+}
+
+.pet {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 12.8rem 16rem;
+}
+.pet__detail {
+  width: 64rem;
+}
+.pet__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.pet__header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.pet__header__top h1 {
+  font-size: 6.4rem;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 6.4rem;
+  color: #23262f;
+  margin: 0;
+}
+.pet__header__top Button {
+  color: #f98197;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: "DM Sans";
+  font-weight: bolder;
+  font-style: normal;
+  line-height: 1.6rem;
+  color: #f98197;
+  border: 2px solid #f98197;
+  background-color: transparent;
+}
+.pet__header__top Button:hover {
+  color: #f4f5f6;
+  border: none;
+  background-color: #f98197;
+}
+.pet__header__down {
+  font-size: 14px;
+  font-family: "Poppins";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+  color: #23262f;
+  width: 100%;
+}
+.pet__about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2rem 0;
+}
+.pet__about h2 {
+  font-size: 3.2rem;
+  font-family: "DM Sans";
+  font-weight: bolder;
+  font-style: normal;
+  line-height: 4rem;
+}
+.pet__about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 32px 0px;
+}
+.pet__about__content-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-family: "Poppins";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 2.4rem;
+  margin-bottom: 2rem;
+}
+.pet__detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2rem 0;
+}
+.pet__detail h2 {
+  font-size: 3.2rem;
+  font-family: "DM Sans";
+  font-weight: bolder;
+  font-style: normal;
+  line-height: 4rem;
+}
+.pet__detail__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 32px 0px;
+}
+.pet__detail__content p {
+  color: #777e90;
+  font-size: 1.2rem;
+  font-family: "Poppins";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 2rem;
+}
+.pet__side {
+  height: 30.3rem;
+  width: 35.3rem;
+  border-radius: 16px;
+  margin-bottom: 4rem;
+}

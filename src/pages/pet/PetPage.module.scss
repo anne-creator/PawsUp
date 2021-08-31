@@ -1,0 +1,108 @@
+@import '../../index.scss';
+
+.pet {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 12.8rem 16rem;
+
+    //left
+    &__detail {
+        width: 64rem;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        &__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            width: 100%;
+
+            h1 {
+                @include text-style-headline-1;
+                color: $color-neutrals-2;
+                margin: 0;
+            }
+
+            Button {
+                color: $color-primary-pink;
+                @include button-secondary;
+            }
+        }
+
+        &__down {
+            @include text-style-caption;
+            color: $color-neutrals-2;
+            width: 100%;
+        }
+
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 2rem 0;
+
+        h2 {
+            @include text-style-headline-4;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 32px 0px;
+        }
+
+        &__content-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            @include text-style-body-2;
+            margin-bottom: 2rem;
+        }
+
+    }
+
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 2rem 0;
+
+        h2 {
+            @include text-style-headline-4;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 32px 0px;
+
+            p {
+                color: $color-neutrals-4;
+                @include text-style-caption-2;
+            }
+        }
+    }
+
+    //right
+    &__side {
+        height: 30.3rem;
+        width: 35.3rem;
+        border-radius: 16px;
+        margin-bottom: 4rem;
+
+    }
+}

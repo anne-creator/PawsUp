@@ -5,6 +5,7 @@ var react_1 = require("react");
 var AdoptPage_module_scss_1 = require("./AdoptPage.module.scss");
 var antd_1 = require("antd");
 var icons_1 = require("@ant-design/icons");
+var react_router_dom_1 = require("react-router-dom");
 // export interface AdoptPageProps {
 // }
 exports.AdoptPage = function () {
@@ -15,6 +16,7 @@ exports.AdoptPage = function () {
         react_1["default"].createElement(antd_1.Menu.Divider, null),
         react_1["default"].createElement(antd_1.Menu.Item, { key: "3" }, "Adult")));
     var Meta = antd_1.Card.Meta;
+    var history = react_router_dom_1.useHistory();
     return (react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt-container'] },
         react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt'] },
             react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt__filter'] },
@@ -51,7 +53,7 @@ exports.AdoptPage = function () {
                                 react_1["default"].createElement(icons_1.DownCircleOutlined, { className: AdoptPage_module_scss_1["default"]['icon'] }))))),
                 react_1["default"].createElement(antd_1.Divider, null)),
             react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt__cards'] },
-                react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt__card'] },
+                react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt__card'], onClick: function () { return history.push('/adopt/pet'); } },
                     react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt__card__img'] }),
                     react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt__card__content'] },
                         react_1["default"].createElement("div", { className: AdoptPage_module_scss_1["default"]['adopt__card__title'] },

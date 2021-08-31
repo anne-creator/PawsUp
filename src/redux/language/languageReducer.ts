@@ -1,3 +1,4 @@
+import {CHANGE_LANGUAGE,ADD_LANGUAGE} from './languageActions'
 export interface LanuageState {
     language: "en" | "zh";
     languageList: { name: string; code: string }[];
@@ -11,5 +12,16 @@ const defaultState:LanuageState = {
 }
 // NOTE: 记得是匿名函数哦！！！
 export default (state=defaultState, action:any) => {
+    switch(action.type) {
+        case CHANGE_LANGUAGE:
+            return {
+                ...state,language: action.payload
+            }
+        case ADD_LANGUAGE:
+            return {
+                ...state,
+                languageList:[...state.languageList,action.payload],
+            }
+    }
     return state;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Footer } from '../../components'
+// import { Header, Footer } from '../../components'
 import { Button } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons';
 import way1 from '../../assets/images/way1.png'
@@ -7,10 +7,6 @@ import way2 from '../../assets/images/way2.png'
 import way3 from '../../assets/images/way3.png'
 import way4 from '../../assets/images/way4.png'
 import dogFood from '../../assets/images/dogFood.png'
-
-
-
-
 // import { Row, Col, Typography } from "antd";
 // import { productList1, productList2, productList3 } from './mockups'
 // import sideImage from '../../assets/images/sider_2019_12-09.png';
@@ -23,7 +19,7 @@ export class HomePage extends React.Component {
     const seniorHref = 'https://petsmartcharities.ca/our-stories/community-impact/keeping-pets-in-the-arms-of-seniors-who-love-them';
     return (
       <div className={styles.App}>
-        <Header />
+        {/* <Header /> */}
 
         {/* ///////////////Hero/////////////// */}
         <div className={styles['hero']}>
@@ -83,10 +79,8 @@ export class HomePage extends React.Component {
               <div className={styles['text__restriction']}></div>
               <Button className={styles['text__button']} >Discover more</Button>
             </div>
-            <div className={`${styles['content__buy__img']} ${styles.item}`}></div>
+            <div className={`${styles['content__buy__img']} ${styles.item}`} />
           </div>
-
-
           {/* ////  3 feed  //// */}
           <div className={styles['content__feed']}>
             <div className={`${styles['content__feed__img']} ${styles.item}`}></div>
@@ -152,7 +146,7 @@ export class HomePage extends React.Component {
             sideImage={sideImage3}
             products={productList3}
           /> */}
-        <Footer />
+        {/* <Footer /> */}
       </div >
     );
   }

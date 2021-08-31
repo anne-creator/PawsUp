@@ -5,10 +5,8 @@ import { GlobalOutlined } from "@ant-design/icons";
 import { Menu, Dropdown, Button } from "antd";
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import store from '../../redux/store'
-import { LanuageState } from '../../redux/languageReducer'
+import { LanuageState } from '../../redux/language/languageReducer'
 import SubMenu from 'antd/lib/menu/SubMenu';
-// import { MainButton, SecondaryButton } from '../../components';
-
 
 interface state extends LanuageState { }
 
@@ -20,6 +18,14 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
       language: language,
       languageList: languageList,
     }
+    store.subscribe(this.handleStoreChange);
+  }
+  handleStoreChange = () => {
+    const storeState = store.getState();
+    this.setState({
+      language: storeState.language,
+      languageList: storeState.languageList,
+    })
   }
 
   render() {
@@ -36,8 +42,9 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
             <h4 className={styles["header__how"]}>How it works</h4>
           </div>
           <Menu mode='horizontal' className={styles["header__middle"]}>
+            {/* FIXME: Menu & SubMenu增加路由跳转 */}
             <SubMenu key="Adopt" title="Adopt" className={styles['item']}>
-              <Menu.Item key="Cat" className={styles['nav']}>
+              <Menu.Item key="Cat" className={styles['nav']} onClick={() => history.push("adopt")}>
                 Cat
               </Menu.Item>
               <Menu.Item key="Dog" className={styles['item']}>
@@ -71,16 +78,26 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
             </SubMenu>
           </Menu>
           <div className={styles['header__right']}>
-            <Button type='primary' className={styles['button__login']}>Log In</Button>
-            <Button className={styles['button__signup']}>Sign Up</Button>
-            {/* <MainButton link='register' content='Log In' />
-            <SecondaryButton link='signin' content="Sign Up" /> */}
-            {/* <Button className={styles['antd1']} onClick={() => history.push("register")}>注册</Button>
-            <Button className={styles['antd2']} onClick={() => history.push("signIn")}>登陆</Button> */}
-            {/* <div className={styles['button__log-in']}>Log In</div>
-            <div className={styles['button__sign-up']}>Sign Up</div> */}
+
+            {/* 非项目 */}
+            <Dropdown.Button
+              style={{ marginLeft: 15 }}
+              overlay={
+                <Menu onClick={this.meunHandler}>
+                  {this.state.languageList.map((l) => {
+                    return <Menu.Item key={l.code}>{l.name}</Menu.Item>;
+                  })}
+                </Menu>
+              }
+              icon={<GlobalOutlined />}
+            >
+              {this.state.language === "zh" ? "中文" : "English"}
+            </Dropdown.Button>
+
+            <Button type='primary' className={styles['button__login']} onClick={() => history.push("register")}>Sign In</Button>
+            <Button className={styles['button__signup']} onClick={() => history.push("signIn")}>Register</Button>
           </div>
-        </div >
+        </div>
         {/* <Menu mode={"horizontal"} className={styles["main-menu"]}>
           <Menu.Item key={1}>旅游首页</Menu.Item>
           <Menu.Item key={2}>周末游</Menu.Item>
@@ -102,6 +119,14 @@ class HeaderComponent extends React.Component<RouteComponentProps, state> {
       </div >
     );
   }
+  meunHandler = (e: any) => {
+    const action = {
+      type: 'change_language',
+      payload: e.key,
+    }
+    store.dispatch(action);
+  }
+
 }
 
 export const Header = withRouter(HeaderComponent)

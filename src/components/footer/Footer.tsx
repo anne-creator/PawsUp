@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             <div className={styles['footer__copyright']}>
                <div className={styles['footer__copyright__content']}>
                   <p className={styles['footer__copyright__Paws-Up']}>Copyright © 2021 Anne Paws Up. All rights reserved</p>
-                  <p className={styles['footer__copyright__cookies']} >We use cookies for better service.<span className={styles['footer__copyright__span']}>Accept</span></p>
+                  <p className={styles['footer__copyright__cookies']} >We use cookies for better service. &ensp;&ensp;<span className={styles['footer__copyright__span']}>Accept</span></p>
                </div>
             </div>
          </div>

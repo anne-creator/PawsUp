@@ -219,14 +219,32 @@ $color-neutrals-8: rgba(252, 252, 253, 1);
 @mixin button-secondary {
     @include button-basic;
     @include text-style-button-2;
-    color: $color-primary-pink;
-    border: 2px solid $color-primary-pink;
-    background-color: transparent;
+    color: $color-neutrals-8;
+    border: none;
+    background-color: $color-primary-pink;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         color: $color-neutrals-7;
         border: none;
         background-color: $color-primary-pink;
+    }
+}
+
+@mixin button-primary {
+    @include button-basic;
+    @include text-style-button-2;
+    border: none;
+    background-color: $color-primary-pink;
+    color: $color-neutrals-8;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $color-neutrals-7;
+        border: none;
+        background-color: $color-primary-pink-light;
     }
 }
 

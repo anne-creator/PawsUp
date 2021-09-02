@@ -38,17 +38,29 @@ code {
 .pet {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 12.8rem 16rem;
+  align-items: start;
+  padding: 6.4rem 9.6rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .pet__detail {
-  width: 64rem;
+  flex: 64;
+  margin: 6.4rem;
 }
 .pet__header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+}
+.pet__header__img {
+  display: block;
+  width: 35.3rem;
+  height: 30.3rem;
+  border-radius: 12px;
+  background: no-repeat url("https://i.postimg.cc/WzqN9kJ0/image.png");
+  background-size: cover;
+  margin-bottom: 6.4rem;
 }
 .pet__header__top {
   display: flex;
@@ -66,6 +78,12 @@ code {
   color: #23262f;
   margin: 0;
 }
+.pet__header__top__name-decor {
+  margin-top: 1rem;
+  width: 4rem;
+  height: 0.8rem;
+  background-color: #f98197;
+}
 .pet__header__top Button {
   color: #f98197;
   display: flex;
@@ -79,11 +97,11 @@ code {
   font-weight: bolder;
   font-style: normal;
   line-height: 1.6rem;
-  color: #f98197;
-  border: 2px solid #f98197;
-  background-color: transparent;
+  color: #fcfcfd;
+  border: none;
+  background-color: #f98197;
 }
-.pet__header__top Button:hover {
+.pet__header__top Button:hover, .pet__header__top Button:active, .pet__header__top Button:focus {
   color: #f4f5f6;
   border: none;
   background-color: #f98197;
@@ -129,27 +147,52 @@ code {
   line-height: 2.4rem;
   margin-bottom: 2rem;
 }
-.pet__detail {
+.pet .pet__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: "DM Sans";
+  font-weight: bolder;
+  font-style: normal;
+  line-height: 1.6rem;
+  border: none;
+  background-color: #f98197;
+  color: #fcfcfd;
+  position: relative;
+}
+.pet .pet__button:hover, .pet .pet__button:active, .pet .pet__button:focus {
+  color: #f4f5f6;
+  border: none;
+  background-color: #ff97ae;
+}
+.pet .pet__button__arrow {
+  margin-bottom: -0.2rem;
+}
+.pet__describe {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
   padding: 2rem 0;
 }
-.pet__detail h2 {
+.pet__describe h2 {
   font-size: 3.2rem;
   font-family: "DM Sans";
   font-weight: bolder;
   font-style: normal;
   line-height: 4rem;
 }
-.pet__detail__content {
+.pet__describe__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 32px 0px;
 }
-.pet__detail__content p {
+.pet__describe__content p {
   color: #777e90;
   font-size: 1.2rem;
   font-family: "Poppins";
@@ -158,8 +201,53 @@ code {
   line-height: 2rem;
 }
 .pet__side {
-  height: 30.3rem;
-  width: 35.3rem;
+  flex: 35.3;
   border-radius: 16px;
-  margin-bottom: 4rem;
+  margin: 6.4rem;
+}
+@media screen and (max-width: 768px) {
+  .pet__side {
+    width: 100%;
+  }
+}
+.pet__side__sponsor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 22.5rem;
+  padding: 4.8rem;
+  border-radius: 12px;
+  background-color: #384b73;
+}
+.pet__side__sponsor h4 {
+  font-size: 2.4rem;
+  font-family: "Poppins";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 32px;
+  color: #fcfcfd;
+}
+.pet__side__sponsor .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: "DM Sans";
+  font-weight: bolder;
+  font-style: normal;
+  line-height: 1.6rem;
+  border: none;
+  background-color: #f98197;
+  color: #fcfcfd;
+}
+.pet__side__sponsor .button:hover, .pet__side__sponsor .button:active, .pet__side__sponsor .button:focus {
+  color: #f4f5f6;
+  border: none;
+  background-color: #ff97ae;
 }

@@ -3,12 +3,17 @@
 .pet {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 12.8rem 16rem;
+    align-items: start;
+    padding: 6.4rem 9.6rem;
+    flex-wrap: wrap;
+    width: 100%;
+
+
 
     //left
     &__detail {
-        width: 64rem;
+        flex: 64;
+        margin: 6.4rem;
     }
 
     &__header {
@@ -16,6 +21,17 @@
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
+
+        &__img {
+            display: block;
+            width: 35.3rem;
+            height: 30.3rem;
+            border-radius: 12px;
+            background: no-repeat url('https://i.postimg.cc/WzqN9kJ0/image.png');
+            background-size: cover;
+            margin-bottom: 6.4rem;
+
+        }
 
         &__top {
             display: flex;
@@ -28,6 +44,13 @@
                 @include text-style-headline-1;
                 color: $color-neutrals-2;
                 margin: 0;
+            }
+
+            &__name-decor {
+                margin-top: 1rem;
+                width: 4rem;
+                height: .8rem;
+                background-color: $color-primary-pink;
             }
 
             Button {
@@ -73,7 +96,16 @@
 
     }
 
-    &__detail {
+    .pet__button {
+        @include button-primary;
+        position: relative;
+
+        &__arrow {
+            margin-bottom: -.2rem;
+        }
+    }
+
+    &__describe {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -99,10 +131,34 @@
 
     //right
     &__side {
-        height: 30.3rem;
-        width: 35.3rem;
+        flex: 35.3;
         border-radius: 16px;
-        margin-bottom: 4rem;
+        margin: 6.4rem;
 
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+        &__sponsor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            height: 22.5rem;
+            padding: 4.8rem;
+            border-radius: 12px;
+            background-color: $color-primary-blue;
+
+            h4 {
+                @include text-style-body-1;
+                color: $color-neutrals-8;
+            }
+
+            .button {
+                @include button-primary;
+            }
+        }
     }
 }

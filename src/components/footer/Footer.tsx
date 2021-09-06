@@ -2,10 +2,16 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import { Divider } from "antd";
 import logo from '../../assets/logo.svg';
+// use hooks in i18n
+import { useTranslation, withTranslation } from "react-i18next";
 
 export const Footer: React.FC = () => {
+   // NOTE: use hooks in function class 
+   const { t } = useTranslation();
    return (
       <footer className={styles['footer-container']}>
+         {/* //NOTE: use translation in hsx*/}
+         <div>{t("footer.detail")}</div>
          <div className={styles['footer']}>
             <div className={styles['footer__main']}>
                <div className={styles['footer__paws-up']}>

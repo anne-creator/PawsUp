@@ -17,7 +17,7 @@ function App() {
         <Route exact path='/register' component={RegisterPage} />
         <Route exact path='/detail/:touristRoutedId' component={DetailPage} />
         <Route exact path='/adopt' component={AdoptPage} />
-        <Route exact path='/adopt/pet' component={PetPage} />
+        <Route exact path='/adopt/pet/:petId' component={PetPage} />
         <Footer />
       </BrowserRouter>
     </div>

@@ -14,7 +14,7 @@ function App() {
             react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/register', component: pages_1.RegisterPage }),
             react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/detail/:touristRoutedId', component: pages_1.DetailPage }),
             react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/adopt', component: pages_1.AdoptPage }),
-            react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/adopt/pet', component: pages_1.PetPage }),
+            react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/adopt/pet/:petId', component: pages_1.PetPage }),
             react_1["default"].createElement(components_1.Footer, null))));
 }
 exports["default"] = App;

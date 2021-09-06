@@ -2,15 +2,19 @@ import React from 'react'
 import styles from './PetPage.module.scss'
 import { Button, Divider } from 'antd'
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { RouteComponentProps } from 'react-router-dom';
 
 
 
-// export interface PetPageProps {
 
-// }
-export const PetPage: React.FC = () => {
+interface PetPageProps {
+    petId: string
+}
+export const PetPage: React.FC<RouteComponentProps<PetPageProps>> = (props) => {
+    console.log(props.match.params.petId);
+
     return (
-        <div className={styles['pet']}>
+        <div className={styles['pet']} >
             <main className={styles['pet__detail']}>
                 <div className={styles['pet__header']}>
                     <div className={styles['pet__header__img']} ></div>

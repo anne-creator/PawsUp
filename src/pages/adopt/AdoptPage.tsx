@@ -1,14 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './AdoptPage.module.scss'
 import { Button, Divider, Dropdown, Menu, Card } from 'antd'
 import { DownCircleOutlined } from "@ant-design/icons";
 import { useHistory } from 'react-router-dom'
+import axios from 'axios';
+import { get } from '../../utils/request';
 
+export interface AdoptPageProps {
 
-// export interface AdoptPageProps {
-
-// }
-export const AdoptPage: React.FC = () => {
+}
+interface State {
+    catList: [];
+}
+export const AdoptPage: React.FC<AdoptPageProps> = (props: AdoptPageProps, State) => {
+    const [catList, setCatList] = useState<any[]>([])
+    const [error, setError] = useState<string>();
+    useEffect(() => {
+        // NOTE: adding extra function inside useEffect coz useEffect cannot revceive promises but object or void.
+        const fetchData = async () => {
+            try {
+                const res = await get('/catList');
+                // const data = await res.data;
+                // NOTE: add petList into the component state: catList
+                setCatList(res);
+            } catch (e) {
+                setError(e)
+            }
+        }
+        fetchData();
+    }, [])
     const menuAge = (
         <Menu>
             <Menu.Item key="0">ANY</Menu.Item>
@@ -71,159 +91,30 @@ export const AdoptPage: React.FC = () => {
                     <Divider />
                 </div>
                 <div className={styles['adopt__cards']}>
-                    <div className={styles['adopt__card']} onClick={() => history.push('/adopt/pet')}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
+                    {catList.map(item => (
+                        <div className={styles['adopt__card']} key={item.Pet_Name} onClick={() => history.push(`/adopt/pet/${item.Pet_ID}`)}>
+                            <img src={item.photo} className={styles['adopt__card__img']}></img>
+                            <div className={styles['adopt__card__content']}>
+                                <div className={styles['adopt__card__title']}>
+                                    <div className={styles['adopt__card__name']}>{item.Pet_Name}</div>
+                                    <div className={styles['adopt__card__age']}>{item.Age}</div>
+                                </div>
+                                <div className={styles['adopt__card__hair']}>{item.Primary_Breed}</div>
+                                <div className={styles['adopt__card__location']}>{item.Shelter_Name}</div>
+                                <Divider className={styles['adopt__card__divider']} />
+                                <div className={styles['adopt__card__detail']}>
+                                    <div className={styles['adopt__card__size-and-gender']}>
+                                        <div className={styles['adopt__card__size']}>Size: {item.Size} </div>
+                                        <span className={styles['adopt__card__color']}>{item.Gender}</span>
+                                    </div>
+                                    <span> Color: {item.Primary_color}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles['adopt__card']}>
-                        <div className={styles['adopt__card__img']}></div>
-                        <div className={styles['adopt__card__content']}>
-                            <div className={styles['adopt__card__title']}>
-                                <div className={styles['adopt__card__name']}>Luna</div>
-                                <div className={styles['adopt__card__age']}>Kitten</div>
-                            </div>
-                            <div className={styles['adopt__card__hair']}>Demostic Short Hair</div>
-                            <Divider />
-                            <div className={styles['adopt__card__detail']}>
-                                <div className={styles['adopt__card__size-and-color']}>Medium Size <span>Black</span></div>
-                                <div className={styles['adopt__card__location']}>Cambridge. ON</div>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-                <div className={styles['adopt__loading']}></div>
             </div>
+            <div className={styles['adopt__loading']}></div>
         </div >
     )
 

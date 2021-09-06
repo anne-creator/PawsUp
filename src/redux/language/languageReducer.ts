@@ -1,4 +1,5 @@
 import {CHANGE_LANGUAGE,ADD_LANGUAGE} from './languageActions'
+import i18n from 'i18next';
 export interface LanuageState {
     language: "en" | "zh";
     languageList: { name: string; code: string }[];
@@ -14,6 +15,8 @@ const defaultState:LanuageState = {
 export default (state=defaultState, action:any) => {
     switch(action.type) {
         case CHANGE_LANGUAGE:
+            // NOTE: for i18n 
+            i18n.changeLanguage(action.payload);// 这样处理是不标准的，有副作用.因为所有的RedUC而都必须是纯函数
             return {
                 ...state,language: action.payload
             }

@@ -1,103 +1,121 @@
 @import '../../index.scss';
 
 .App-header {
-  background:white;
+  background: white;
 }
-.header{
+
+.header {
   min-height: 8.1rem;
-  display:flex;
+  display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 2rem 16rem;
+
   @media screen and (max-width:1000px) {
-    > * {
+    >* {
       margin: 1.5rem 0;
     }
+
     flex-direction: column;
     align-items: center;
   }
 
   // //////////left-header//////////////// //
-  &__left{
+  &__left {
     display: flex;
     align-items: center;
-    
+
   }
-  &__logo{
+
+  &__logo {
     display: flex;
     align-items: center;
-    &__img{
+
+    &__img {
       width: 3.2rem;
       height: 3.2rem;
       margin-right: .8rem;
     }
-    &__title{
+
+    &__title {
       @include text-style-body-1;
       color: $color-primary-blue;
       font-weight: 700;
       margin: 0;
-      white-space:nowrap;
+      white-space: nowrap;
     }
   }
+
   &__how {
     @include text-style-button-2;
     margin-bottom: 0;
     margin-left: 3.2rem;
     color: $color-neutrals-4;
-    white-space:nowrap;
+    white-space: nowrap;
   }
+
   // //////////middle-header//////////////// //
   &__middle {
     align-items: center;
-    
+
   }
- 
+
   ////////////right-header//////////////// //
   &__right {
     display: flex;
     align-items: center;
+
     .button__login {
       @include button-basic;
       @include text-style-button-2;
       background-color: $color-primary-pink;
       color: $color-neutrals-8;
       margin-right: 1.2rem;
-      border:none;
+      border: none;
+
       &:hover {
         background-color: $color-primary-pink-light;
       }
-      &:active,&:focus {
+
+      &:active,
+      &:focus {
         border-color: $color-primary-pink;
         background: $color-primary-pink;
         box-shadow: $color-primary-pink;
       }
+
       ::selection {
         color: #fff;
         background: $color-primary-pink !important;
+      }
     }
-    }
+
     .button__signup {
       @include button-basic;
       color: $color-neutrals-8;
       @include text-style-button-2;
       color: $color-neutrals-2;
-      border:.2rem solid $color-neutrals-6;
+      border: .2rem solid $color-neutrals-6;
+
       &:hover {
-        border-color:$color-primary-pink;
+        border-color: $color-primary-pink;
         color: $color-primary-pink;
       }
     }
   }
 }
-.ant-meun-submenu > .ant-menu{
-  border-bottom-color:$color-primary-pink !important;
+
+.ant-meun-submenu>.ant-menu {
+  border-bottom-color: $color-primary-pink !important;
   color: $color-primary-blue;
 }
+
 .ant-menu-item {
-  border-bottom-color:$color-primary-pink !important;
+  border-bottom-color: $color-primary-pink !important;
   color: $color-primary-blue;
-  margin:0 1rem;
+  margin: 0 1rem;
+
   .ant-meun-item-active {
-    color:$color-primary-pink !important;
+    color: $color-primary-pink !important;
   }
 }

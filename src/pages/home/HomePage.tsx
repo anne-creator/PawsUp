@@ -13,9 +13,13 @@ import dogFood from '../../assets/images/dogFood.png'
 // import sideImage2 from '../../assets/images/sider_2019_02-04.png';
 // import sideImage3 from './../../assets/images/sider_2019_02-04-2.png';
 import styles from './HomePage.module.scss'
-export class HomePage extends React.Component {
+import { withTranslation, WithTranslation } from 'react-i18next';//首字母大写：高阶组件，首字母小写：类型定义
+
+class HomePageComponent extends React.Component<WithTranslation> {
 
   render() {
+    // 用了withTranslation之后，自动给props追加一个t函数
+    const { t } = this.props;
     const seniorHref = 'https://petsmartcharities.ca/our-stories/community-impact/keeping-pets-in-the-arms-of-seniors-who-love-them';
     return (
       <div className={styles.App}>
@@ -131,7 +135,7 @@ export class HomePage extends React.Component {
           <ProductCollection
             title={
               <Typography.Title level={3} type="danger">
-                新品上市
+                {t("home_page.new_arrival")}
               </Typography.Title>
             }
             sideImage={sideImage2}
@@ -151,4 +155,5 @@ export class HomePage extends React.Component {
     );
   }
 }
+export const HomePage = withTranslation()(HomePageComponent)
 

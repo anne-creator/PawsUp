@@ -3,8 +3,10 @@
 .adopt-container {
     display: flex;
     padding: 0px 11vw;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgba($color-primary-pink-light, .2);
 }
 
 .adopt {
@@ -13,6 +15,7 @@
     align-items: center;
     width: 100%;
     padding: 2rem 4rem 6rem;
+    background-color: #fff;
 
     //1
     &__filter {
@@ -126,25 +129,33 @@
         align-items: center;
         width: 29.6rem;
         padding: 1.2rem;
+        background-color: rgba($color-primary-blue, $alpha: 1);
 
-        background: #FCFCFD;
+
+
+
+        // background: #FCFCFD;
         @include effect-style-depth-5;
+        box-shadow: $color-primary-blue;
         border-radius: 20px;
         cursor: pointer;
 
         &:hover {
             @include effect-style-depth-1;
             transform: scale(1.02);
-            background-color: $color-neutrals-7;
+            background-color: $color-primary-blue-light;
+            border-bottom: 3px solid rgba($color-primary-blue, .5);
+            border-right: 3px solid rgba($color-primary-blue, .5);
+            ;
+
         }
 
         &__img {
             width: 100%;
-            height: 27.2rem;
-            background-color: purple;
+            height: 40rem;
             border-radius: 16px;
-            background-image: url('https://i.postimg.cc/WzqN9kJ0/image.png');
-            background-size: cover;
+            object-fit: cover;
+            background-color: rgba($color-secondary-4, .2);
         }
 
         &__content {
@@ -162,11 +173,12 @@
             align-items: center;
             width: 100%;
             margin-bottom: .8rem;
+            color: $color-neutrals-7;
         }
 
         &__name {
             @include text-style-body-1;
-            color: $color-primary-blue;
+            color: $color-neutrals-7;
         }
 
         &__age {
@@ -174,55 +186,60 @@
             justify-content: center;
             align-items: center;
             padding: .6rem .6rem;
-            border: 2px solid $color-primary-3;
+            border: 2px solid $color-primary-pink-light;
             box-sizing: border-box;
             border-radius: 4px;
-            color: $color-primary-3;
+            color: $color-primary-pink-light;
             @include text-style-hairline-2;
         }
 
         &__hair {
             @include text-style-caption-bold;
-            color: $color-neutrals-3;
+            color: $color-neutrals-7;
             width: 100%;
-        }
-
-        &__detail {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        &__size-and-color {
-            @include text-style-caption-2;
-            color: $color-neutrals-4;
-
-            span {
-                @include text-style-caption-2;
-                color: $color-neutrals-3;
-            }
         }
 
         &__location {
             @include text-style-caption-2;
-            color: $color-neutrals-4;
+            color: $color-neutrals-6;
+        }
+
+        &__detail {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            width: 100%;
+            color: $color-neutrals-7;
+            @include text-style-caption-2;
+
+
+        }
+
+        &__size-and-gender {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &__divider {
+            border-color: #fff;
         }
     }
 
-    //3
-    &__loading {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 1.2rem 1.6rem;
 
-    }
+
 }
 
 
 
-.adopt__button {}
+//3
+// &__loading {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+//     padding: 1.2rem 1.6rem;
+
+// }

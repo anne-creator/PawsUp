@@ -5,9 +5,8 @@ var react_1 = require("react");
 var PetPage_module_scss_1 = require("./PetPage.module.scss");
 var antd_1 = require("antd");
 var icons_1 = require("@ant-design/icons");
-// export interface PetPageProps {
-// }
-exports.PetPage = function () {
+exports.PetPage = function (props) {
+    console.log(props.match.params.petId);
     return (react_1["default"].createElement("div", { className: PetPage_module_scss_1["default"]['pet'] },
         react_1["default"].createElement("main", { className: PetPage_module_scss_1["default"]['pet__detail'] },
             react_1["default"].createElement("div", { className: PetPage_module_scss_1["default"]['pet__header'] },

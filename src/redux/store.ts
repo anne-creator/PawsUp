@@ -2,7 +2,7 @@ import {createStore} from 'redux'
 import LanguageReducer from './language/languageReducer'
 const store = createStore(LanguageReducer);
 // NOTE： 定义language的类型
-/* explain:ReturnType<typeof store.getState>;
+/* explain:ReturnType<typeof store.getState> 反向注入
 store.getState returns the current store tree:function getInt(a: string) {
  return parseInt(a);
 }

@@ -8,7 +8,7 @@ var components_1 = require("./components");
 function App() {
     return (react_1["default"].createElement("div", { className: App_module_scss_1["default"].App },
         react_1["default"].createElement(react_router_dom_1.BrowserRouter, null,
-            react_1["default"].createElement(components_1.Header, null),
+            react_1["default"].createElement(components_1.HeaderClass, null),
             react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/', component: pages_1.HomePage }),
             react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/signin', component: pages_1.SignInPage }),
             react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: '/register', component: pages_1.RegisterPage }),

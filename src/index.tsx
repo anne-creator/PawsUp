@@ -9,7 +9,7 @@ import store from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-      // NOTE: use provider
+    {/* // NOTE: use provider */}
     <Provider store={store}>
       <App />
     </Provider>

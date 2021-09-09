@@ -9,6 +9,5 @@ require("antd/dist/antd.css");
 var react_redux_1 = require("react-redux");
 var store_1 = require("./redux/store");
 react_dom_1["default"].render(react_1["default"].createElement(react_1["default"].StrictMode, null,
-    "// NOTE: use provider",
     react_1["default"].createElement(react_redux_1.Provider, { store: store_1["default"] },
         react_1["default"].createElement(App_1["default"], null))), document.getElementById('root'));

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./App.module.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 import { HomePage, SignInPage, RegisterPage, DetailPage, AdoptPage, PetPage } from './pages';
-import { Header, Footer } from './components';
+import { HeaderClass, Footer } from './components';
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className={styles.App}>
       {/* NOTE:  包裹所有的页面*/}
       <BrowserRouter>
-        <Header />
+        <HeaderClass />
         <Route exact path='/' component={HomePage} />
         {/* NOTE：路由发生了变化，两个页面会堆叠显示。所以需要短路处理，给path之前加入 exact  */}
         <Route exact path='/signin' component={SignInPage} />

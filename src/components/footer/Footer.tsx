@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 import { Divider } from "antd";
 import logo from '../../assets/logo.svg';
 // use hooks in i18n
-import { useTranslation, withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export const Footer: React.FC = () => {
    // NOTE: use hooks in function class 

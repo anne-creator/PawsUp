@@ -27,12 +27,12 @@ var defaultState = {
         { name: "English", code: "en" },
     ]
 };
-// NOTE: 记得是匿名函数哦！！！
+// NOTE: 记得是匿名函数哦！！！增加actiontypes：1.纠错功能。 2.动态区分传入action的类型 
 exports["default"] = (function (state, action) {
     if (state === void 0) { state = defaultState; }
     switch (action.type) {
         case languageActions_1.CHANGE_LANGUAGE:
-            // NOTE: for i18n 
+            // NOTE: for i18n.once clicked, action was dispatched to here, other than add payload 
             i18next_1["default"].changeLanguage(action.payload); // 这样处理是不标准的，有副作用.因为所有的RedUC而都必须是纯函数
             return __assign(__assign({}, state), { language: action.payload });
         case languageActions_1.ADD_LANGUAGE:

@@ -1,6 +1,13 @@
-import {createStore} from 'redux'
-import LanguageReducer from './language/languageReducer'
-const store = createStore(LanguageReducer);
+import {createStore,combineReducers} from 'redux'
+import languageReducer from './language/languageReducer'
+import recommendProductsReducer from "./recommendProducts/recommendProductsReducer"
+
+const rootReducer = combineReducers({
+    language:languageReducer,
+    recommendProducts:recommendProductsReducer,
+})//combineReducer接受一个对象
+
+const store = createStore(rootReducer);
 // NOTE： 定义language的类型
 /* explain:ReturnType<typeof store.getState> 反向注入
 store.getState returns the current store tree:function getInt(a: string) {

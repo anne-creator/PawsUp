@@ -7,16 +7,42 @@ import way2 from '../../assets/images/way2.png'
 import way3 from '../../assets/images/way3.png'
 import way4 from '../../assets/images/way4.png'
 import dogFood from '../../assets/images/dogFood.png'
-// import { Row, Col, Typography } from "antd";
-// import { productList1, productList2, productList3 } from './mockups'
-// import sideImage from '../../assets/images/sider_2019_12-09.png';
-// import sideImage2 from '../../assets/images/sider_2019_02-04.png';
-// import sideImage3 from './../../assets/images/sider_2019_02-04-2.png';
 import styles from './HomePage.module.scss'
 import { withTranslation, WithTranslation } from 'react-i18next';//首字母大写：高阶组件，首字母小写：类型定义
+import { connect } from 'react-redux';
+import { RootState } from '../../redux/store'
+import { fetchRecommendProductFailActionCreator, fetchRecommendProductStartActionCreator, fetchRecommendProductSuccessActionCreator } from '../../redux/recommendProducts/recommendProductsActions';//引入三个action creator
+
+interface State {
+  loading: boolean;
+  error: string | null;
+  productList: any[];
+}
+// get State from store
+const mapStateToProps = (state: RootState) => {
+  return {
+    loading: state.recommendProducts.loading,
+    error: state.recommendProducts.error,
+    productList: state.recommendProducts.productList
+
+  }
+}
+
+const mapDispatchToProps = (dispatch: any) => {//不建议给dispatch规定硬性类型
+  return {
+    fetchStart: () => {
+      dispatch(fetchRecommendProductStartActionCreator());
+    },
+    fetchSuccess: (data) => {
+      dispatch(fetchRecommendProductSuccessActionCreator(data));
+    },
+    fetchFail: (error) => {
+      dispatch(fetchRecommendProductFailActionCreator(error));
+    },
+  };
+};
 
 class HomePageComponent extends React.Component<WithTranslation> {
-
   render() {
     // 用了withTranslation之后，自动给props追加一个t函数
     const { t } = this.props;
@@ -155,5 +181,5 @@ class HomePageComponent extends React.Component<WithTranslation> {
     );
   }
 }
-export const HomePage = withTranslation()(HomePageComponent)
+export const HomePage = connect()(withTranslation()(HomePageComponent));
 

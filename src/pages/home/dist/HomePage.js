@@ -23,13 +23,31 @@ var way2_png_1 = require("../../assets/images/way2.png");
 var way3_png_1 = require("../../assets/images/way3.png");
 var way4_png_1 = require("../../assets/images/way4.png");
 var dogFood_png_1 = require("../../assets/images/dogFood.png");
-// import { Row, Col, Typography } from "antd";
-// import { productList1, productList2, productList3 } from './mockups'
-// import sideImage from '../../assets/images/sider_2019_12-09.png';
-// import sideImage2 from '../../assets/images/sider_2019_02-04.png';
-// import sideImage3 from './../../assets/images/sider_2019_02-04-2.png';
 var HomePage_module_scss_1 = require("./HomePage.module.scss");
 var react_i18next_1 = require("react-i18next"); //首字母大写：高阶组件，首字母小写：类型定义
+var react_redux_1 = require("react-redux");
+var recommendProductsActions_1 = require("../../redux/recommendProducts/recommendProductsActions"); //引入三个action creator
+// get State from store
+var mapStateToProps = function (state) {
+    return {
+        loading: state.recommendProducts.loading,
+        error: state.recommendProducts.error,
+        productList: state.recommendProducts.productList
+    };
+};
+var mapDispatchToProps = function (dispatch) {
+    return {
+        fetchStart: function () {
+            dispatch(recommendProductsActions_1.fetchRecommendProductStartActionCreator());
+        },
+        fetchSuccess: function (data) {
+            dispatch(recommendProductsActions_1.fetchRecommendProductSuccessActionCreator(data));
+        },
+        fetchFail: function (error) {
+            dispatch(recommendProductsActions_1.fetchRecommendProductFailActionCreator(error));
+        }
+    };
+};
 var HomePageComponent = /** @class */ (function (_super) {
     __extends(HomePageComponent, _super);
     function HomePageComponent() {
@@ -118,4 +136,4 @@ var HomePageComponent = /** @class */ (function (_super) {
     };
     return HomePageComponent;
 }(react_1["default"].Component));
-exports.HomePage = react_i18next_1.withTranslation()(HomePageComponent);
+exports.HomePage = react_redux_1.connect()(react_i18next_1.withTranslation()(HomePageComponent));

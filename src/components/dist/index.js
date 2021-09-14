@@ -16,3 +16,5 @@ __exportStar(require("./carousel"), exports);
 __exportStar(require("./sideMenu"), exports);
 __exportStar(require("./productCollection"), exports);
 __exportStar(require("./button"), exports);
+__exportStar(require("./productIntro"), exports);
+__exportStar(require("./productComments"), exports);

@@ -7,6 +7,25 @@ import { DatePicker, Space } from "antd";
 import { RouteComponentProps, useParams } from 'react-router-dom';
 const { RangePicker } = DatePicker;
 import { commentMockData } from "./mockup";
+// NOTE1 for use slice in detail page
+import { productDetailSlice } from '../../redux/productDetail/slice';
+import { useSelector } from '../../redux/hooks';//连接 产品详情的数据
+import { useDispatch } from 'react-redux';
+
+/** connect rtk in detail page
+ *      1.NOTE1:import productDetailSlice,useSelector, useDispatch
+ *      2.NOTE2:extract data from store: useSelector
+ *      3.NOTE3:取得dispatch函数
+ *      4.NOTE4：useEffect 中分别发送三个action。action从slice中来，RTK自动生成了actionCreator
+ */
+
+//NOTE2: extract data from store: useSelector
+const loading = useSelector(state => state.productDetail.loading);
+const error = useSelector(state => state.productDetail.error)
+const product = useSelector(state => state.productDetail.data);
+
+// NOTE3: get dispatch funciton from useDispatch
+const dispatch = useDispatch();
 
 interface MatchParams {
     touristRoutedId: string
@@ -23,14 +42,14 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) =>
 
     useEffect(() => {
         const fetchData = async () => {
-            setLoading(true);
+            // setLoading(true);rtk前
+            // NOTE4：useEffect 中分别发送三个action
+            dispatch(productDetailSlice.actions.fetchStart())//ANCHOR: 一定要加小括号
             try {
                 const { data } = await axios.get(`http://123.56.149.216:8080/api/touristRoutes/${touristRouteId}`);
-                setProduct(data.product);
-                setLoading(false);
+                dispatch(productDetailSlice.actions.fetchSuccess(data))//API 返回后的数据
             } catch (error) {
-                setError(error.message);
-                setLoading(false);
+                dispatch(productDetailSlice.actions.fetchFail(error.message))//ANCHER:from API,must add message
             }
         };
         fetchData();

@@ -46,6 +46,22 @@ var antd_2 = require("antd");
 var react_router_dom_1 = require("react-router-dom");
 var RangePicker = antd_2.DatePicker.RangePicker;
 var mockup_1 = require("./mockup");
+// NOTE1 for use slice in detail page
+var slice_1 = require("../../redux/productDetail/slice");
+var hooks_1 = require("../../redux/hooks"); //连接 产品详情的数据
+var react_redux_1 = require("react-redux");
+/** connect rtk in detail page
+ *      1.NOTE1:import productDetailSlice,useSelector, useDispatch
+ *      2.NOTE2:extract data from store: useSelector
+ *      3.NOTE3:取得dispatch函数
+ *      4.NOTE4：useEffect 中分别发送三个action。action从slice中来，RTK自动生成了actionCreator
+ */
+//NOTE2: extract data from store: useSelector
+var loading = hooks_1.useSelector(function (state) { return state.productDetail.loading; });
+var error = hooks_1.useSelector(function (state) { return state.productDetail.error; });
+var product = hooks_1.useSelector(function (state) { return state.productDetail.data; });
+// NOTE3: get dispatch funciton from useDispatch
+var dispatch = react_redux_1.useDispatch();
 exports.DetailPage = function (props) {
     // console.log(props.history)
     // console.log(props.location)
@@ -60,20 +76,20 @@ exports.DetailPage = function (props) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        setLoading(true);
+                        // setLoading(true);rtk前
+                        // NOTE4：useEffect 中分别发送三个action
+                        dispatch(slice_1.productDetailSlice.actions.fetchStart()); //ANCHOR: 一定要加小括号
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, , 4]);
                         return [4 /*yield*/, axios_1["default"].get("http://123.56.149.216:8080/api/touristRoutes/" + touristRouteId)];
                     case 2:
                         data = (_a.sent()).data;
-                        setProduct(data.product);
-                        setLoading(false);
+                        dispatch(slice_1.productDetailSlice.actions.fetchSuccess(data)); //API 返回后的数据
                         return [3 /*break*/, 4];
                     case 3:
                         error_1 = _a.sent();
-                        setError(error_1.message);
-                        setLoading(false);
+                        dispatch(slice_1.productDetailSlice.actions.fetchFail(error_1.message)); //ANCHER:from API,must add message
                         return [3 /*break*/, 4];
                     case 4: return [2 /*return*/];
                 }

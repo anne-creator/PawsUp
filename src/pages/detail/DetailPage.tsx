@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styles from 'DetailPage.module.scss'
+// import styles from 'DetailPage.module.scss'
 import axios from "axios";
 import { Spin, Row, Col, Divider, Typography, Anchor, Menu } from "antd";
 import { HeaderClass, Footer, ProductIntro, ProductComments } from "../../components";
@@ -8,9 +8,10 @@ import { RouteComponentProps, useParams } from 'react-router-dom';
 const { RangePicker } = DatePicker;
 import { commentMockData } from "./mockup";
 // NOTE1 for use slice in detail page
-import { productDetailSlice } from '../../redux/productDetail/slice';
+import { productDetailSlice, getProductDetail } from '../../redux/productDetail/slice';
 import { useSelector } from '../../redux/hooks';//连接 产品详情的数据
 import { useDispatch } from 'react-redux';
+
 
 /** connect rtk in detail page
  *      1.NOTE1:import productDetailSlice,useSelector, useDispatch
@@ -41,18 +42,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) =>
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchData = async () => {
-            // setLoading(true);rtk前
-            // NOTE4：useEffect 中分别发送三个action
-            dispatch(productDetailSlice.actions.fetchStart())//ANCHOR: 一定要加小括号
-            try {
-                const { data } = await axios.get(`http://123.56.149.216:8080/api/touristRoutes/${touristRouteId}`);
-                dispatch(productDetailSlice.actions.fetchSuccess(data))//API 返回后的数据
-            } catch (error) {
-                dispatch(productDetailSlice.actions.fetchFail(error.message))//ANCHER:from API,must add message
-            }
-        };
-        fetchData();
+        dispatch(getProductDetail(touristRoutedId)) //NOTE 使用异步thunk
     }, [])
     if (loading) {
         return (

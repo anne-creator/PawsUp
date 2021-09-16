@@ -128,8 +128,8 @@ class HomePageComponent extends React.Component<PropsType> {
             <div className={`${styles['content__video__img']} ${styles['item']}`} >
             </div>
             <div className={`${styles['text']} ${styles.item}`}>
-              <div className={styles['text__decor']}>New ways of helping animals </div>
-              <div className={styles['text__heading']}>Like watching cute animal viedos? </div>
+              <div className={styles['text__decor']}>New ways of helping animals</div>
+              <div className={styles['text__heading']}>Like watching cute animal viedos?</div>
               <div className={styles['text__subheading']}> Donate selected products, We will deliver the cute animal video.</div>
               <div className={styles['text__restriction']}></div>
               <Button className={styles['text__button']} >Discover more</Button>

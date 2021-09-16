@@ -16,3 +16,4 @@ __exportStar(require("./signin"), exports);
 __exportStar(require("./detail"), exports);
 __exportStar(require("./register"), exports);
 __exportStar(require("./pet"), exports);
+__exportStar(require("./search"), exports);

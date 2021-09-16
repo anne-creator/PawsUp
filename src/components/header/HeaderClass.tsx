@@ -271,6 +271,21 @@ export const HeaderClass: React.FC = () => {
           <Button className={styles['button__signup']} onClick={() => history.push("signIn")}>Register</Button>
         </div>
       </div>
+
+      {/* 非必要 */}
+      <Layout.Header className={styles["main-header"]}>
+        <span onClick={() => history.push("/")}>
+          <img src={logo} alt="logo" className={styles["App-logo"]} />
+          <Typography.Title level={3} className={styles.title}>
+            {t("header.title")}
+          </Typography.Title>
+        </span>
+        <Input.Search
+          placeholder={"请输入旅游目的地、主题、或关键字"}
+          className={styles["search-input"]}
+          onSearch={(keywords) => history.push("/search/" + keywords)}
+        />
+      </Layout.Header>
       <Menu mode={"horizontal"} className={styles["main-menu"]}>
         <Menu.Item key="1"> {t("header.home_page")} </Menu.Item>
         <Menu.Item key="2"> {t("header.weekend")} </Menu.Item>

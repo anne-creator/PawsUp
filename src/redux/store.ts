@@ -4,12 +4,15 @@ import recommendProductsReducer from "./recommendProducts/recommendProductsReduc
 import thunk from 'redux-thunk';
 import {actionLog} from "./middlewares/actionLog"
 import { productDetailSlice } from './productDetail/slice'; //NOTE2：引入slice
+import { productSearchSlice} from './productSearch/slice'
 import { combineReducers,configureStore, getDefaultMiddleware } from "@reduxjs/toolkit"; //支持处理slice和reducer
 
 const rootReducer = combineReducers({
     language:languageReducer,
     recommendProducts:recommendProductsReducer,
     productDetail: productDetailSlice.reducer,
+    productSearch: productSearchSlice.reducer,
+
 })//combineReducer接受一个对象
 
 /** NOTE RTK store 创建方式

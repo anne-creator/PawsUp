@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./App.module.scss";
 import { BrowserRouter, Route } from "react-router-dom";
-import { HomePage, SignInPage, RegisterPage, DetailPage, AdoptPage, PetPage } from './pages';
+import { HomePage, SignInPage, RegisterPage, DetailPage, AdoptPage, PetPage, SearchPage } from './pages';
 import { HeaderClass, Footer } from './components';
 
 
@@ -18,6 +18,8 @@ function App() {
         <Route exact path='/detail/:touristRoutedId' component={DetailPage} />
         <Route exact path='/adopt' component={AdoptPage} />
         <Route exact path='/adopt/pet/:petId' component={PetPage} />
+        {/* 教学项目 问好代表参数可选*/}
+        <Route exact path='/search/keywords?' component={SearchPage} />
         <Footer />
       </BrowserRouter>
     </div>

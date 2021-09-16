@@ -11,11 +11,13 @@ var languageReducer_1 = require("./language/languageReducer");
 var recommendProductsReducer_1 = require("./recommendProducts/recommendProductsReducer");
 var actionLog_1 = require("./middlewares/actionLog");
 var slice_1 = require("./productDetail/slice"); //NOTE2：引入slice
+var slice_2 = require("./productSearch/slice");
 var toolkit_1 = require("@reduxjs/toolkit"); //支持处理slice和reducer
 var rootReducer = toolkit_1.combineReducers({
     language: languageReducer_1["default"],
     recommendProducts: recommendProductsReducer_1["default"],
-    productDetail: slice_1.productDetailSlice.reducer
+    productDetail: slice_1.productDetailSlice.reducer,
+    productSearch: slice_2.productSearchSlice.reducer
 }); //combineReducer接受一个对象
 /** NOTE RTK store 创建方式
  * 参数：接受一个对象，里面有reducer，middleware(可不写）,devTools*/

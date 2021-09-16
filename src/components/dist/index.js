@@ -18,3 +18,5 @@ __exportStar(require("./productCollection"), exports);
 __exportStar(require("./button"), exports);
 __exportStar(require("./productIntro"), exports);
 __exportStar(require("./productComments"), exports);
+__exportStar(require("./filter"), exports);
+__exportStar(require("./productList"), exports);
